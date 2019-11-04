@@ -1,28 +1,40 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button @click="show = !show" class="show-hide-btn">显示或者隐藏</button>
+    <div v-if="show" class="show-hide-robot">
+      <build-robot></build-robot>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import BuildRobot from "./components/BuildRobot";
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    BuildRobot
+  },
+  data() {
+    return {
+      show: true
+    };
   }
-}
+};
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .show-hide-btn {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+  .show-hide-robot {
+    
+  }
 }
 </style>
