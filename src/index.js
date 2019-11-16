@@ -13,19 +13,24 @@
 //----------------------------------------------------------------
 
 // controller
-import { registerController } from './components/controller/index.js';
+import { registerController } from './components/controller/index';
 // import BuildRobot from "./components/BuildRobot.vue";
-import { robotsModule } from './store/index.js';
+import { robotsModule } from './store';
 
 // production
-// import ApplicationBR from './components/application/index.js';
+import ApplicationBR from './components/application/index.js';
+
+const components = [ApplicationBR];
 
 const install = function (Vue, opts = {}) {
+  components.map(component => {
+    Vue.component(component.name, component);
+  })
   // Vue.component(BuildRobot.name, BuildRobot);
 
 
-  const BRController = registerController(Vue);
-  Vue.prototype.$brController = BRController;
+  const BrController = registerController(Vue);
+  Vue.prototype.$brController = BrController;
   if (!opts.vuexInstance) {
     throw new Error('need vuex instance');
   } else {
@@ -42,5 +47,5 @@ if(typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
 }
 
-export default { install };
+export default { install, ApplicationBR };
 

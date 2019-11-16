@@ -6,15 +6,24 @@ function registerController(Vue) {
 
   let instance;
 
-  const BRController = function (options, store) {
+  const BrController = function (options, store) {
+    if (Vue.prototype.$isServer) return;
     options = options || {};
+
+    let mixin = {
+      created: options.created || null, //function
+      mounted: options.mounted || null, //function
+      methods: options.methods || null, //object
+      computed: options.computed || null //object
+    };
 
     if(instance){
       instance.vm._data = options.data;
     } else {
       instance = new ControllerConstructor({
         data: options.data,
-        store
+        store,
+        mixins: [mixin]
       })
     }
 
@@ -34,7 +43,7 @@ function registerController(Vue) {
 
   };
 
-  return BRController;
+  return BrController;
 
 
 }

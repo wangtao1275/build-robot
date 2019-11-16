@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="autoShow">展示或隐藏</button>
+    <button @click="handleClick">展示或隐藏</button>
   </div>
 </template>
 
@@ -25,7 +25,10 @@
     methods: {
       autoShow() {
         console.log('autoShow')
-      }
+      },
+      handleClick() {
+      this.br.isShow = !this.br.isShow;
+    },
     },
 
   }

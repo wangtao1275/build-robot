@@ -1,7 +1,7 @@
 {
   "name": "build-robot",
   "description": "感谢jmcooper的vue基础教程 地址如下  https://github.com/jmcooper/vuejs-fundamentals     jmcooper/vuejs-fundamentals Repo for working with the Pluralsight Vue Fundamentals course available here: https://www.pluralsight.com/courses/vuejs-fundamentals    基于该demo目的是打包npm包之后，在vue工程中直接使用时，针对vuex axios vue-router等能否在vue工程中正常使用的测试用例",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "wangtao1275",
   "license": "MIT",
   "private": false,

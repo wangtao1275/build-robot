@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" v-show="isShow">
     <header>
       <nav>
         <li class="nav-item">
@@ -37,6 +37,11 @@
 <script>
 export default {
   name: "BuildRobot",
+  data() {
+    return {
+      isShow: true,
+    }
+  },
   computed: {
     cart() {
       return this.$store.state.robots.cart;

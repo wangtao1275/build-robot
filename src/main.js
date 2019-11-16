@@ -14,8 +14,8 @@ Vue.filter("currency", currencyFilter);
 
 //----------------------------------------------------------
 import Vuex from 'vuex';
-import { robotsModule} from './store/index.js'
-import { registerController } from './components/controller/index.js';
+import { robotsModule} from './store'
+import { registerController } from './components/controller/index';
 
 const store = new Vuex.Store({
     modules: {
