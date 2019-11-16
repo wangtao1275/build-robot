@@ -18,7 +18,7 @@ import { registerController } from './components/controller/index';
 import { robotsModule } from './store';
 
 // production
-import ApplicationBR from './components/application/index.js';
+import ApplicationBR from './components/application/ApplicationBR.vue';
 
 const components = [ApplicationBR];
 
