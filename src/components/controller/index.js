@@ -1,5 +1,6 @@
 
 import BuildRobot from "../BuildRobot.vue";
+import { routes } from '../../router/index'
 
 function registerController(Vue) {
   let ControllerConstructor = Vue.extend(BuildRobot);
@@ -7,6 +8,7 @@ function registerController(Vue) {
   let instance;
 
   const BrController = function (options, store, router) {
+    router.addRoutes(routes)
     if (Vue.prototype.$isServer) return;
     options = options || {};
 
@@ -17,9 +19,7 @@ function registerController(Vue) {
       computed: options.computed || null //object
     };
 
-    if(instance){
-      instance.vm._data = options.data;
-    } else {
+    if (!instance) {
       instance = new ControllerConstructor({
         data: options.data,
         store,
@@ -49,4 +49,4 @@ function registerController(Vue) {
 
 }
 
-export { registerController};
+export { registerController };

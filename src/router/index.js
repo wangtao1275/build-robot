@@ -13,7 +13,7 @@ import SidebarStandard from "../components/sidebars/SidebarStandard.vue";
 import SidebarBuild from "../components/sidebars/SidebarBuild.vue";
 import ShoppingCart from "../components/cart/ShoppingCart.vue";
 
-const routes = [
+export const routes = [
   {
     path: "/",
     name: "Home",
@@ -80,3 +80,4 @@ export default new VueRouter({
   mode: "history",
   routes: routes
 });
+
