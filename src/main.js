@@ -26,8 +26,6 @@ const store = new Vuex.Store({
 let brController = registerController(Vue);
 Vue.prototype.$brController = brController;
 
-
-
 //----------------------------------------------------------
 
 new Vue({

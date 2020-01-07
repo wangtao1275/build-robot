@@ -5,35 +5,32 @@
 </template>
 
 <script>
-  export default {
-    name: 'application-br',
-    created () {
-      this.br = this.$brController(
-        {
-          data: {
-            isShow: false
-          },
-          init: {
-            options: {
-
-            }
-          }
+export default {
+  name: "application-br",
+  mounted() {
+    this.br = this.$brController(
+      {
+        data: {
+          isShow: false
         },
-        this.$store
-      );
-    },
-    methods: {
-      autoShow() {
-        console.log('autoShow')
+        init: {
+          options: {}
+        }
       },
-      handleClick() {
+      this.$store,
+      this.$router
+    );
+  },
+  methods: {
+    autoShow() {
+      console.log("autoShow");
+    },
+    handleClick() {
       this.br.isShow = !this.br.isShow;
-    },
-    },
-
+    }
   }
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>

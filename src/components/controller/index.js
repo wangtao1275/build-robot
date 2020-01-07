@@ -6,7 +6,7 @@ function registerController(Vue) {
 
   let instance;
 
-  const BrController = function (options, store) {
+  const BrController = function (options, store, router) {
     if (Vue.prototype.$isServer) return;
     options = options || {};
 
@@ -23,6 +23,7 @@ function registerController(Vue) {
       instance = new ControllerConstructor({
         data: options.data,
         store,
+        router,
         mixins: [mixin]
       })
     }
